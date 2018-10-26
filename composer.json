@@ -1,0 +1,22 @@
+{
+    "name": "qqes/parallel",
+    "description": "simple parallel",
+    "keywords": ["parallel"],
+    "type": "library",
+    "homepage": "http://www.witgame.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "QQES_ZH",
+            "homepage": "http://www.witgame.com"
+        }
+    ],
+    "require": {
+        "swoole": "^4.2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Qqes\\Parallel\\": "src/"
+        }
+    }
+}
