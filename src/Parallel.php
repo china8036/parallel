@@ -37,6 +37,7 @@ class Parallel {
             $process = new swoole_process(function(swoole_process $worker) use($key, $actor, $callback,  $mark, $return_result) {
                 $result = call_user_func($callback, $key, $actor);
                 $return_result && Parallel::saveEachResult($mark, $key, $result);
+                $worker->exit(1);//不执行regist_shutdown_function等后期清理工作 防止其断开http等异常情况
             });
             $process->start();
         }
